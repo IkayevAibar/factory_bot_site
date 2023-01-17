@@ -67,17 +67,16 @@ class BotViewSet(viewsets.ModelViewSet):
     serializer_class = BotSerializer
     permission_classes = [permissions.IsAuthenticated]
     
-    # def get_serializer_class(self):
-    #         if self.action == 'create':
-    #             return BotCreateSerializer
-    #         return BotSerializer
+    def get_serializer(self):
+            return BotSerializer
 
     def get_queryset(self):
         return self.queryset
-    
-    # def create(self, request, *args, **kwargs):
-    #     serializer = self.get_serializer(data=request.data)
-    #     serializer.is_valid(raise_exception=True)
-    #     serializer.save(serializer)
-    #     return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    @action(detail=False, methods=['GET'], name='Get bot by token')
+    def get_bot_id_by_token(self, request, *args, **kwargs):
+        queryset = Bot.objects.filter(token=request.data['token'])
+
+        serializer = self.get_serializer(queryset)
+        return Response(serializer.data)
  
