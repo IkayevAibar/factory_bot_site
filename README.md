@@ -1,7 +1,6 @@
 # Factory_bot + site
 Привет, попытаюсь кратко и ясно всё обьяснить.
 
-____
 ## Этапы юзер флоу
 
 0. **Регистрация** -> POST http://factory-bot-site.herokuapp.com/auth/users/  with body  {username, password, first_name}
