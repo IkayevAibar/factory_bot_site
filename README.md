@@ -14,8 +14,8 @@
 4. **Получаем свой token в**  -> https://factory-bot-site.herokuapp.com/api-token-auth/  with body  {username, password}  Remark///Этот token для 5 пункта
 5. **Находим айди бота в**  -> POST https://factory-bot-site.herokuapp.com/api/bots/get_bots_id_by_token/   with body  {token}
 6. **Теперь мы можем отправить сообщение через API в чат** -> POST https://factory-bot-site.herokuapp.com/send_message_to_chat/ with body  {bot(айди бота), user(айди юзера), message_body}
-7. **Вы должны будете получить сообщение**
-8. **Получаем все сообщения** -> POST https://factory-bot-site.herokuapp.com/get_all_messages/ with body  {bot(айди бота), user(айди юзера)
+7. **Вы должны будете получить сообщение в тг чате от бота**
+8. **Получаем все ваши сообщения** -> POST https://factory-bot-site.herokuapp.com/get_all_messages/ with body  {bot(айди бота), user(айди юзера)
 
 ____
 - [X] ссылка на реп бота https://github.com/IkayevAibar/factory_bot
