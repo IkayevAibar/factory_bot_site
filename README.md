@@ -18,8 +18,9 @@
 8. **Получаем все сообщения** -> POST https://factory-bot-site.herokuapp.com/get_all_messages/ with body  {bot(айди бота), user(айди юзера)
 
 ____
+- [X] ссылка на реп бота https://github.com/IkayevAibar/factory_bot
 
-- [X] Это весь функционал вроде, есть еще лист юзеров, ботов и всё такое, ну это всё лишнее
+- [X] Это весь функционал вроде, есть еще лист юзеров, ботов и всё такое, ну это всё лишнее,
 
 - [X] Все эти эндпоинты есть в файле для постмана factory.postman_collection.json(https://github.com/IkayevAibar/factory_bot_site/blob/master/factory.postman_collection.json)
 
