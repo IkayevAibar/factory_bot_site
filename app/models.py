@@ -4,6 +4,8 @@ from django.utils.translation import gettext_lazy as _
 
 from .managers import UserManager
 
+from datetime import datetime
+
 from rest_framework.authtoken.models import Token
 # from django.contrib.auth.models import UserManager
 
@@ -32,5 +34,6 @@ class Message(models.Model):
     user = models.ForeignKey(User, verbose_name="Отправитель сообщения", on_delete=models.CASCADE)
     bot = models.ForeignKey(Bot, verbose_name="Получатель[Bot] сообщения", on_delete=models.CASCADE)
     message_body = models.TextField(_("Сообщение"), max_length=500, null=True, blank=True)
+    sended_at = models.DateTimeField(_("Время отправления"), default=datetime.now)
 
 # Token.add_to_class('last_request', models.DateTimeField("Last request made by user", null=True, blank=True))

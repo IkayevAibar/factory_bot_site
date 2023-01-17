@@ -7,7 +7,7 @@ from django.conf import settings
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-from app.models import User, Bot
+from app.models import User, Bot, Message
 from .serializers import UserSerializer, UserRegistrationSerializer, BotSerializer, MessageSerializer
 
 import requests
@@ -49,6 +49,15 @@ def send_message_to_chat(request):
         api_tg_call(Bot.objects.get(id=request.data["bot"]), User.objects.get(id=request.data["user"]), request.data["message_body"])
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+@permission_classes((permissions.IsAuthenticated,))
+def get_all_messages(user_id,bot_id):
+    serializer = MessageSerializer()
+    snippets = Message.objects.filter(user_id=user_id,bot_id=bot_id)
+    serializer = MessageSerializer(snippets, many=True)
+    return Response(serializer.data)
+    
 
 class BotViewSet(viewsets.ModelViewSet):
     """
