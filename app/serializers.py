@@ -19,7 +19,7 @@ class BotSerializer(serializers.ModelSerializer):
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
-        fields = ['id', 'user','bot','message_body']
+        fields = ['id', 'user','bot','message_body','sended_at']
 
 # class BotCreateSerializer(serializers.ModelSerializer):
 #     # def create(self, validated_data):
