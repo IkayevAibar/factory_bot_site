@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "5d9bc59d-3469-4a0c-abe6-9c26df692bc5",
+		"name": "factory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13655773"
+	},
+	"item": [
+		{
+			"name": "Регистрация",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://factory-bot-site.herokuapp.com/auth/users/",
+					"protocol": "http",
+					"host": [
+						"factory-bot-site",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Авторизация",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://factory-bot-site.herokuapp.com/api/token/",
+					"protocol": "https",
+					"host": [
+						"factory-bot-site",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отправка сообщение через сайт в чат",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczOTA4MDE2LCJqdGkiOiIwMzA5MjgzMGZjMDI0YmM0YjJhYWNjZmMzZjk2NDQwZSIsInVzZXJfaWQiOjJ9.dAcgvSL3waAQLamMMwlNWlJ_N0EJq02EfgqHCeg8kl0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bot",
+							"value": "1",
+							"description": "bot id (always 1)",
+							"type": "text"
+						},
+						{
+							"key": "user",
+							"value": "2",
+							"description": "User id",
+							"type": "text"
+						},
+						{
+							"key": "message_body",
+							"value": "Привет",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://factory-bot-site.herokuapp.com/send_message_to_chat/",
+					"protocol": "https",
+					"host": [
+						"factory-bot-site",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"send_message_to_chat",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Токен для тг",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "zxczxc123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://factory-bot-site.herokuapp.com/api-token-auth/",
+					"protocol": "https",
+					"host": [
+						"factory-bot-site",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api-token-auth",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение всех ботов для авторизованного юзера грубо говоря",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczOTYxMDA3LCJqdGkiOiI2MDlhNDBkYWMyZmI0MTM3YWU1ZGVhMTE1OWYxN2U3MiIsInVzZXJfaWQiOjF9.jv3oFTEoF2UWTsW4i1srpH4igFCgizWINJc27FqN9xs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "c624cc39024681213ac56c4a5be4354aad488434",
+							"type": "text"
+						},
+						{
+							"key": "chat_id",
+							"value": "1723096777",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://factory-bot-site.herokuapp.com/api/bots/get_bots_id_by_token/",
+					"protocol": "https",
+					"host": [
+						"factory-bot-site",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"bots",
+						"get_bots_id_by_token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение всех сообщения которые отправил авторизованный юзер",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczOTEwNTkyLCJqdGkiOiIyZWRmM2MzNzcwM2Q0OGRmYWU5ODZmNmE4MDIyMWI0YyIsInVzZXJfaWQiOjJ9.88XhebhbFt_WN3trGs0K_tvvsuk_rJ2Vybtt3PC-iv8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "bot_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://factory-bot-site.herokuapp.com/get_all_messages/",
+					"protocol": "https",
+					"host": [
+						"factory-bot-site",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"get_all_messages",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
