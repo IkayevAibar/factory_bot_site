@@ -50,7 +50,7 @@ def send_message_to_chat(request):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['GET'])
+@api_view(['POST'])
 @permission_classes((permissions.IsAuthenticated,))
 def get_all_messages(request):
     serializer = MessageSerializer()
