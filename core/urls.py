@@ -38,4 +38,5 @@ urlpatterns = [
     # path('auth/', include('djoser.urls.authtoken')),
     path('api-token-auth/', rest_view.obtain_auth_token),
     path('send_message_to_chat/', views.send_message_to_chat),
+    path('get_all_messages/', views.get_all_messages),
 ]
