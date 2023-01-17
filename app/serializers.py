@@ -5,11 +5,11 @@ from .models import User, Bot, Message
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'email','first_name']
+        fields = ['id', 'username','first_name']
 
 class UserRegistrationSerializer(BaseUserRegistrationSerializer):
     class Meta(BaseUserRegistrationSerializer.Meta):
-        fields = ('id', 'email', 'first_name', 'password', )
+        fields = ('id', 'username', 'first_name', 'password', )
 
 class BotSerializer(serializers.ModelSerializer):
     class Meta:
