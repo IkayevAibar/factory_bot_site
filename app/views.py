@@ -52,9 +52,9 @@ def send_message_to_chat(request):
 
 @api_view(['GET'])
 @permission_classes((permissions.IsAuthenticated,))
-def get_all_messages(user_id,bot_id):
+def get_all_messages(request):
     serializer = MessageSerializer()
-    snippets = Message.objects.filter(user_id=user_id,bot_id=bot_id)
+    snippets = Message.objects.filter(user_id=request.data['user_id'],bot_id=request.data['bot_id'])
     serializer = MessageSerializer(snippets, many=True)
     return Response(serializer.data)
     
