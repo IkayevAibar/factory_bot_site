@@ -29,7 +29,7 @@ class UserViewSet(viewsets.ModelViewSet):
         return self.queryset
 
 def api_tg_call(bot:Bot, user:User ,text):
-    message_text = user.username+", я получил от тебя сообщение:\n"+text
+    message_text = user.first_name+", я получил от тебя сообщение:\n"+text
     payload = dict(text=message_text,chat_id=bot.chat_id)
 
     # так как у нас только один бот пока сделаю так, если бы было больше ботов то можно это всё проапдейтить
