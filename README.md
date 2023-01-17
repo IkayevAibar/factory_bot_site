@@ -1,6 +1,7 @@
 # Factory_bot + site
 Привет, попытаюсь кратко и ясно всё обьяснить.
 
+
 ## Этапы юзер флоу
 
 0. **Регистрация** -> POST http://factory-bot-site.herokuapp.com/auth/users/  with body  {username, password, first_name}
@@ -16,6 +17,8 @@
 6. **Теперь мы можем отправить сообщение через API в чат** -> POST https://factory-bot-site.herokuapp.com/send_message_to_chat/ with body  {bot(айди бота), user(айди юзера), message_body}
 7. **Вы должны будете получить сообщение**
 8. **Получаем все сообщения** -> POST https://factory-bot-site.herokuapp.com/get_all_messages/ with body  {bot(айди бота), user(айди юзера)
+
+
 
 - [X] Это весь функционал вроде, есть еще лист юзеров, ботов и всё такое, ну это всё лишнее
 
