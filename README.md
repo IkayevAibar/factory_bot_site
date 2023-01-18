@@ -30,7 +30,7 @@ ____
 
 ```mermaid
 erDiagram
-    SITE ||--o{ BOT: 
+    SITE ||--o{ BOT: .
 ```
 ____
 
