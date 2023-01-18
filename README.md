@@ -28,11 +28,10 @@ ____
 
 ____
 
-flowchart TB
-  node((Сайт)) --> node[Бот №1]
-  node((Сайт)) --> node[Бот №2]
-  node((Сайт)) --> node[Бот №N]
-
+```mermaid
+erDiagram
+    SITE ||--o{ BOT
+```
 ____
 
 # Спасибо за внимание!
