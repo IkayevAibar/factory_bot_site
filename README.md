@@ -1,11 +1,11 @@
 # Factory_bot + site
 Привет, попытаюсь кратко и ясно всё обьяснить.
-
+Сайт и Бот находятся на разных веб-серверах
 ## Этапы юзер флоу
 
 0. **Регистрация** -> POST http://factory-bot-site.herokuapp.com/auth/users/  with body  {username, password, first_name}
 1. **Авторизация** -> POST https://factory-bot-site.herokuapp.com/api/token/ with body  {username, password}  Этот token для авторизаций JWT
-2. **Заходим в бота в тг** @the_factory_task_bot
+2. **Заходим в бота в тг** @the_factory_task_bot / Cперва надо включить его переходя на http://factory-bot-aibar.herokuapp.com/
 3. **Пишем /generate_token**  :black_square_button: Возможно из за heroku придётся пару раз попытаться
     1. Пишем логин
     2. Пишем пароль
